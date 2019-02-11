@@ -23,3 +23,27 @@ date       || credit  || debit   || balance
 13/01/2012 || 2000.00 ||         || 3000.00
 10/01/2012 || 1000.00 ||         || 1000.00
 ```
+
+### User Stories
+
+```
+As a client 
+So that I can keep track of my money
+I would like to be able to have a bank account 
+
+As a client 
+So that I can add money to my account
+I would like to be able to make a deposit
+
+As a client
+So that I can take money out of my account 
+I would like to be able to make a withdrawal
+
+As a client
+So that I can see a history of my account transactions
+I would like to be able to print out a bank statement
+
+As a client 
+So that I can put my transactions into context
+I would like to see a date attached to every transaction
+```
