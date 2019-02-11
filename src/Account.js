@@ -9,4 +9,9 @@ class Account {
     this.balance += credit
     return this.balance
   }
+
+  withdraw (debit) {
+    this.balance -= debit
+    return this.balances
+  }
 }
