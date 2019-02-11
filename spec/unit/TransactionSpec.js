@@ -8,15 +8,15 @@ describe('Transaction', () => {
     transaction = new Transaction(new Date(2019, 1, 11), 500.00, 0.00)
   })
 
-  it('should initialize with a date', () => {
+  it('initializes with a date', () => {
     expect(transaction.date).toEqual('11/02/2019')
   })
 
-  it('should specify the transaction amount', () => {
+  it('specifies the transaction amount', () => {
     expect(transaction.amount).toEqual(500.00)
   })
 
-  it('should carry a previous account balance ', () => {
+  it('carries a previous account balance ', () => {
     expect(transaction.balance).toEqual(0.00)
   })
 })

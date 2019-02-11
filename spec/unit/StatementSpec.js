@@ -8,7 +8,7 @@ describe('Statement', () => {
     statement = new Statement()
   })
 
-  it('instatiates with and empty transaction history', () => {
+  it('instatiates with an empty transaction history', () => {
     expect(statement.transactions).toEqual([])
   })
 })
