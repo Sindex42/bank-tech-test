@@ -1,9 +1,9 @@
 'use strict'
 
 class Transaction {
-  constructor (date = new Date(), amount, balance) {
+  constructor (amount, newBalance, date = new Date()) {
     this.date = date.toLocaleDateString()
     this.amount = amount
-    this.balance = balance
+    this.newBalance = newBalance
   }
 }

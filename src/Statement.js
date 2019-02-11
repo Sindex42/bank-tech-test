@@ -2,6 +2,10 @@
 
 class Statement {
   constructor () {
-    this.transactions = []
+    this.history = []
+  }
+
+  add (transaction) {
+    this.history.push(transaction)
   }
 }
