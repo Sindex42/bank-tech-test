@@ -12,6 +12,6 @@ class Account {
 
   withdraw (debit) {
     this.balance -= debit
-    return this.balances
+    return this.balance
   }
 }
