@@ -2,7 +2,7 @@
 /* global it, expect, describe, beforeEach, TransactionHistory */
 
 describe('TransactionHistory', () => {
-  let statement, transaction, transactionClass
+  let statement
 
   beforeEach(() => {
     statement = new TransactionHistory()

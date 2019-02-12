@@ -1,10 +1,11 @@
 'use strict'
+/* global it, expect, describe, beforeEach, Account */
 
 describe('Depositing', () => {
   let account
 
   beforeEach(() => {
-    account = new Account
+    account = new Account()
   })
 
   it('creates a new transaction and adds it to the history', () => {

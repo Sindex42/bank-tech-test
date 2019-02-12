@@ -1,5 +1,5 @@
 'use strict'
-/* global it, expect, describe, beforeEach, Account */
+/* global it, expect, describe, beforeEach, spyOn, Account */
 
 describe('Account', () => {
   let account
