@@ -14,6 +14,7 @@ class Account {
 
   withdraw (debit) {
     this.balance -= debit
+    this.history.addTransaction(-debit, this.balance)
     return this.balance
   }
 }

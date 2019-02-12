@@ -23,7 +23,7 @@ describe('Account', () => {
     })
 
     it('adds a statement to the history', () => {
-      spyOn(this.history, 'addTransaction')
+      spyOn(account.history, 'addTransaction')
       account.deposit(500.00)
 
       expect(account.history.addTransaction).toHaveBeenCalled()
@@ -32,10 +32,16 @@ describe('Account', () => {
 
   describe('#withdraw', () => {
     it('debits an amount from the account', () => {
-      account.balance = 500.00
       account.withdraw(250.00)
 
-      expect(account.balance).toEqual(250.00)
+      expect(account.balance).toEqual(-250.00)
     })
+  })
+
+  it('adds a statement to the history', () => {
+    spyOn(account.history, 'addTransaction')
+    account.withdraw(500.00)
+
+    expect(account.history.addTransaction).toHaveBeenCalled()
   })
 })

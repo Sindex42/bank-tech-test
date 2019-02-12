@@ -1,11 +1,10 @@
 'use strict'
 
 describe('Depositing', () => {
-  let account, date
+  let account
 
   beforeEach(() => {
     account = new Account
-    date = '11/2/2019'
   })
 
   it('creates a new transaction and adds it to the history', () => {
