@@ -7,7 +7,7 @@ describe('Features', () => {
   beforeEach(() => {
     account = new Account()
     date = '11/2/2019'
-    header = ' date      || credit  || debit   || balance'
+    header = 'date       || credit  || debit   || balance'
   })
 
   describe('Depositing', () => {
@@ -27,12 +27,12 @@ describe('Features', () => {
   })
 
   describe('Statements', () => {
-    it('a client can see the date of a deposit', () => {
-      expect(account.printStatement).toContain(date)
+    it('a client can see a descriptive header', () => {
+      expect(account.printStatement()).toContain(header)
     })
 
-    it('a client can see a descriptive header', () => {
-      expect(account.printStatement).toContain(header)
+    it('a client can see the date of a deposit', () => {
+      expect(account.printStatement()).toContain(date)
     })
   })
 })

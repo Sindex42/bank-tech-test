@@ -9,4 +9,9 @@ class TransactionHistory {
     let transaction = new Transaction(amount, newBalance)
     this.transactions.push(transaction)
   }
+
+  printStatement () {
+    let header = 'date       || credit  || debit   || balance'
+    return header
+  }
 }

@@ -2,7 +2,7 @@
 /* global it, expect, describe, beforeEach, spyOn, Account */
 
 describe('Account', () => {
-  let account
+  let account, statement
 
   beforeEach(() => {
     account = new Account()
@@ -42,6 +42,12 @@ describe('Account', () => {
       account.withdraw(500.00)
 
       expect(account.history.addTransaction).toHaveBeenCalled()
+    })
+  })
+
+  describe('#printStatement', () => {
+    it('returns a string', () => {
+      expect(typeof account.printStatement()).toBe('string')
     })
   })
 })

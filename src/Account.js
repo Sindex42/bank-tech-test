@@ -17,4 +17,8 @@ class Account {
     this.history.addTransaction(-debit, this.balance)
     return this.balance
   }
+
+  printStatement () {
+    return this.history.printStatement()
+  }
 }
