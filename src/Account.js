@@ -1,7 +1,7 @@
 'use strict'
 
 class Account {
-  constructor (statement = new Statement) {
+  constructor (statement = new TransactionHistory()) {
     this.balance = 0.00
     this.statement = statement
   }

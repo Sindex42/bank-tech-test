@@ -5,7 +5,7 @@ describe('Transaction', () => {
   let transaction
 
   beforeEach(() => {
-    transaction = new Transaction(500.00, 100.00, new Date(2019, 1, 11))
+    transaction = new Transaction(500.00, 600.00, new Date(2019, 1, 11))
   })
 
   it('initializes with a date', () => {
@@ -17,6 +17,6 @@ describe('Transaction', () => {
   })
 
   it('carries a previous account balance', () => {
-    expect(transaction.newBalance).toEqual(100.00)
+    expect(transaction.newBalance).toEqual(600.00)
   })
 })

@@ -1,7 +1,10 @@
+'use strict'
+/* global it, expect, describe, beforeEach, Account */
+
 describe('Features', () => {
   let account
 
-  beforeEach(()=> {
+  beforeEach(() => {
     account = new Account()
   })
 
