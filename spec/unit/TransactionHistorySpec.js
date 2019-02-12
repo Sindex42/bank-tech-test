@@ -15,16 +15,31 @@ describe('TransactionHistory', () => {
 
   describe('#addTransaction', () => {
     it('adds a transaction to the history', () => {
-      history.addTransaction(500, 1000, new Date(2019, 1, 11))
+      history.addTransaction(500.00, 1000.00)
 
-      expect(history.transactions[0].amount).toEqual(500)
-      expect(history.transactions[0].newBalance).toEqual(1000)
+      expect(history.transactions[0].amount).toEqual(500.00)
+      expect(history.transactions[0].newBalance).toEqual(1000.00)
     })
   })
 
   describe('#printStatement', () => {
     it('prints a header', () => {
       expect(history.printStatement()).toContain(header)
+    })
+
+    it('prints the credit amount', () => {
+      history.addTransaction(500.00, 1000.00)
+      expect(history.printStatement()).toContain('500.00 ||        ')
+    })
+
+    it('prints the debit amount', () => {
+      history.addTransaction(-500.00, 1000.00)
+      expect(history.printStatement()).toContain('        || 500.00')
+    })
+
+    it('prints the new account balance', () => {
+      history.addTransaction(500.00, 1000.00)
+      expect(history.printStatement()).toContain('1000.00')
     })
   })
 })

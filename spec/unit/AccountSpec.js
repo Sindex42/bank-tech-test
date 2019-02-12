@@ -2,7 +2,7 @@
 /* global it, expect, describe, beforeEach, spyOn, Account */
 
 describe('Account', () => {
-  let account, statement
+  let account
 
   beforeEach(() => {
     account = new Account()

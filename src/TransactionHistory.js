@@ -11,7 +11,25 @@ class TransactionHistory {
   }
 
   printStatement () {
-    let header = 'date       || credit  || debit   || balance'
-    return header
+    let statement, header, transactionString, balanceDiff
+    statement = ''
+    header = 'date       || credit  || debit   || balance\n'
+
+    statement += header
+
+    this.transactions.forEach((transaction) => {
+      const amount = Math.abs(transaction.amount).toFixed(2)
+
+      if (transaction.amount >= 0) {
+        balanceDiff = `${amount} ||        `
+      } else {
+        balanceDiff = `        || ${amount}`
+      }
+
+      transactionString = ` ${transaction.date} || ${balanceDiff} || ${transaction.newBalance.toFixed(2)}\n`
+      statement += transactionString
+    })
+
+    return statement
   }
 }

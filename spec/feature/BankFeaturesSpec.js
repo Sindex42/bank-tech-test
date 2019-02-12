@@ -2,12 +2,10 @@
 /* global it, expect, describe, beforeEach, Account */
 
 describe('Features', () => {
-  let account, date, header
+  let account, today, header
 
   beforeEach(() => {
     account = new Account()
-    date = '11/2/2019'
-    header = 'date       || credit  || debit   || balance'
   })
 
   describe('Depositing', () => {
@@ -27,12 +25,33 @@ describe('Features', () => {
   })
 
   describe('Statements', () => {
+    beforeEach(() => {
+      today = (new Date()).toLocaleDateString()
+      header = 'date       || credit  || debit   || balance'
+
+      account.deposit(1500.00)
+      account.withdraw(1000.00)
+
+    })
+
     it('a client can see a descriptive header', () => {
       expect(account.printStatement()).toContain(header)
     })
 
     it('a client can see the date of a deposit', () => {
-      expect(account.printStatement()).toContain(date)
+      expect(account.printStatement()).toContain(today)
+    })
+
+    it('a client can see the amount deposited', () => {
+      expect(account.printStatement()).toContain(1500.00)
+    })
+
+    it('a client can see the amount withdrawn', () => {
+      expect(account.printStatement()).toContain(1000.00)
+    })
+
+    it('a client can see the updated balance', () => {
+      expect(account.printStatement()).toContain(500.00)
     })
   })
 })
