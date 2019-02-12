@@ -13,7 +13,7 @@ describe('Account', () => {
   })
 
   it('has a statement property', () => {
-    expect(account.statement).toBeDefined()
+    expect(account.history).toBeDefined()
   })
 
   describe('#deposit', () => {

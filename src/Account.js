@@ -1,9 +1,9 @@
 'use strict'
 
 class Account {
-  constructor (statement = new TransactionHistory()) {
+  constructor (history = new TransactionHistory()) {
     this.balance = 0.00
-    this.statement = statement
+    this.history = history
   }
 
   deposit (credit) {
