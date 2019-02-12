@@ -19,8 +19,14 @@ describe('Account', () => {
   describe('#deposit', () => {
     it('credits an amount to the account', () => {
       account.deposit(500.00)
-
       expect(account.balance).toEqual(500.00)
+    })
+
+    it('adds a statement to the history', () => {
+      spyOn(this.history, 'addTransaction')
+      account.deposit(500.00)
+
+      expect(account.history.addTransaction).toHaveBeenCalled()
     })
   })
 

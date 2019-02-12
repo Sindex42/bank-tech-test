@@ -8,6 +8,7 @@ class Account {
 
   deposit (credit) {
     this.balance += credit
+    this.history.addTransaction(credit, this.balance)
     return this.balance
   }
 

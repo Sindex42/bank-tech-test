@@ -2,11 +2,11 @@
 
 class TransactionHistory {
   constructor () {
-    this.history = []
+    this.transactions = []
   }
 
   addTransaction (amount, newBalance) {
     let transaction = new Transaction(amount, newBalance)
-    this.history.push(transaction)
+    this.transactions.push(transaction)
   }
 }

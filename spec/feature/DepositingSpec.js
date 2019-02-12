@@ -1,0 +1,17 @@
+'use strict'
+
+describe('Depositing', () => {
+  let account, date
+
+  beforeEach(() => {
+    account = new Account
+    date = '11/2/2019'
+  })
+
+  it('creates a new transaction and adds it to the history', () => {
+    account.deposit(500)
+
+    expect(account.history.transactions[0].amount).toEqual(500)
+    expect(account.history.transactions[0].newBalance).toEqual(500)
+  })
+})
