@@ -36,12 +36,12 @@ describe('Account', () => {
 
       expect(account.balance).toEqual(-250.00)
     })
-  })
 
-  it('adds a statement to the history', () => {
-    spyOn(account.history, 'addTransaction')
-    account.withdraw(500.00)
+    it('adds a statement to the history', () => {
+      spyOn(account.history, 'addTransaction')
+      account.withdraw(500.00)
 
-    expect(account.history.addTransaction).toHaveBeenCalled()
+      expect(account.history.addTransaction).toHaveBeenCalled()
+    })
   })
 })
