@@ -2,7 +2,7 @@
 /* global it, expect, describe, beforeEach, Account */
 
 describe('Features', () => {
-  let account, today, header
+  let account, header, today
 
   beforeEach(() => {
     account = new Account()
@@ -31,7 +31,6 @@ describe('Features', () => {
 
       account.deposit(1500.00)
       account.withdraw(1000.00)
-
     })
 
     it('a client can see a descriptive header', () => {

@@ -16,7 +16,7 @@ describe('Transaction', () => {
     expect(transaction.amount).toEqual(500.00)
   })
 
-  it('carries a previous account balance', () => {
+  it('carries the new account balance', () => {
     expect(transaction.newBalance).toEqual(600.00)
   })
 })

@@ -6,13 +6,14 @@ describe('Account', () => {
 
   beforeEach(() => {
     account = new Account()
+    spyOn(account.history, 'addTransaction')
   })
 
   it('has an initial balance of 0.00', () => {
     expect(account.balance).toEqual(0.00)
   })
 
-  it('has a statement property', () => {
+  it('has a history property', () => {
     expect(account.history).toBeDefined()
   })
 
@@ -23,9 +24,7 @@ describe('Account', () => {
     })
 
     it('adds a statement to the history', () => {
-      spyOn(account.history, 'addTransaction')
       account.deposit(500.00)
-
       expect(account.history.addTransaction).toHaveBeenCalled()
     })
   })
@@ -33,14 +32,11 @@ describe('Account', () => {
   describe('#withdraw', () => {
     it('debits an amount from the account', () => {
       account.withdraw(250.00)
-
       expect(account.balance).toEqual(-250.00)
     })
 
     it('adds a statement to the history', () => {
-      spyOn(account.history, 'addTransaction')
       account.withdraw(500.00)
-
       expect(account.history.addTransaction).toHaveBeenCalled()
     })
   })

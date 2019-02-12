@@ -11,7 +11,8 @@ class TransactionHistory {
   }
 
   printStatement () {
-    let statement, header, transactionString, balanceDiff
+    let balanceDiff, header, statement, transactionString
+
     statement = ''
     header = 'date       || credit  || debit   || balance\n'
 
