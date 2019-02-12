@@ -12,6 +12,10 @@ describe('Account', () => {
     expect(account.balance).toEqual(0.00)
   })
 
+  it('has a statement property', () => {
+    expect(account.statement).toBeDefined()
+  })
+
   describe('#deposit', () => {
     it('credits an amount to the account', () => {
       account.deposit(500.00)

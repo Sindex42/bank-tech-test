@@ -1,8 +1,9 @@
 'use strict'
 
 class Account {
-  constructor () {
+  constructor (statement = new Statement) {
     this.balance = 0.00
+    this.statement = statement
   }
 
   deposit (credit) {
