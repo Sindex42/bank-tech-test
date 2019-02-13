@@ -1,5 +1,4 @@
 'use strict'
-/* global it, expect, describe, beforeEach, Account */
 
 describe('Features', () => {
   let account, header, today

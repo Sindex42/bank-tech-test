@@ -14,25 +14,23 @@ class TransactionHistory {
 
   print () {
     let statement = 'date       || credit  || debit   || balance\n'
-
     this.transactions.forEach((transaction) => {
-      let transactionString = this.format(transaction)
-      statement += transactionString
+      statement += this.formatLine(transaction)
     })
-
     return statement
   }
 
-  format (transaction) {
-    let balanceDiff
+  formatLine (transaction) {
+    let balanceDiff = this.determineAmountType(transaction)
+
+    return ` ${transaction.date} || ${balanceDiff}` +
+           `|| ${transaction.newBalance.toFixed(2)}\n`
+  }
+
+  determineAmountType (transaction) {
     const amount = Math.abs(transaction.amount).toFixed(2)
 
-    if (transaction.amount >= 0) {
-      balanceDiff = `${amount} ||        `
-    } else {
-      balanceDiff = `        || ${amount}`
-    }
-
-    return ` ${transaction.date} || ${balanceDiff} || ${transaction.newBalance.toFixed(2)}\n`
+    if (transaction.amount >= 0) { return `${amount} ||        ` }
+    return `        || ${amount}`
   }
 }

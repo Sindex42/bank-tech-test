@@ -1,7 +1,7 @@
 'use strict'
 
 describe('TransactionHistory', () => {
-  let creditTransaction, debitTransaction, history, header
+  let creditTransaction, debitTransaction, header, history, transaction
 
   beforeEach(() => {
     header = 'date       || credit  || debit   || balance'
@@ -21,28 +21,28 @@ describe('TransactionHistory', () => {
     })
   })
 
-  describe('#printStatement', () => {
+  describe('#print', () => {
     it('prints a header', () => {
       expect(history.print()).toContain(header)
     })
   })
 
-  describe('#formatStatementLine', () => {
-    beforeEach(() => {
-      creditTransaction = {amount: 500, newBalance: 1000}
-      debitTransaction = {amount: -500, newBalance: 1000}
+  describe('#formatLine', () => {
+    it('prints the new account balance', () => {
+      transaction = { amount: 500, newBalance: 700 }
+      expect(history.formatLine(transaction)).toContain('700.00')
     })
+  })
 
+  describe('#determineType', () => {
     it('prints the credit amount', () => {
-      expect(history.format(creditTransaction)).toContain('500.00 ||        ')
+      creditTransaction = { amount: 500, newBalance: 1000 }
+      expect(history.determineAmountType(creditTransaction)).toContain('500.00 ||        ')
     })
 
     it('prints the debit amount', () => {
-      expect(history.format(debitTransaction)).toContain('        || 500.00')
-    })
-
-    it('prints the new account balance', () => {
-      expect(history.format(debitTransaction)).toContain('1000.00')
+      debitTransaction = { amount: -500, newBalance: 1000 }
+      expect(history.determineAmountType(debitTransaction)).toContain('        || 500.00')
     })
   })
 })
