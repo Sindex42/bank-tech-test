@@ -1,5 +1,52 @@
 # Bank tech test
 
+An example banking app written in Javascript during week 10 at Makers Academy. Interaction with the app is through the browser console.
+
+## Getting started
+
+1. Clone this repo `git clone git@github.com:Sindex42/bank-tech-test.git`
+2. Change directory `cd bank-tech-test`
+3. Run npm to install dependencies `npm install`
+
+### Testing and Coverage
+
+1. Run tests with Jasmine `open SpecRunner.html`
+2. Generate code coverage with Istanbul through Karma `karma start`
+3. Locate the file in the coverage folder
+4. Open the index.html file in Chrome
+
+### Usage
+
+- In the same SpecRunner browser window, open up the console e.g. in Chrome:  
+  `ctrl + shift + J` (windows) or 
+ `cmd + option + J` (mac)
+
+![Imgur](https://i.imgur.com/ERrqLoU.png)
+
+## User Stories
+
+```
+As a client 
+So that I can keep track of my money
+I would like to be able to have a bank account 
+
+As a client 
+So that I can add money to my account
+I would like to be able to make a deposit
+
+As a client
+So that I can take money out of my account 
+I would like to be able to make a withdrawal
+
+As a client
+So that I can see a history of my account transactions
+I would like to be able to print out a bank statement
+
+As a client 
+So that I can put my transactions into context
+I would like to see a date attached to every transaction
+```
+
 ## Specification
 
 ### Requirements
@@ -24,26 +71,3 @@ date       || credit  || debit   || balance
 10/01/2012 || 1000.00 ||         || 1000.00
 ```
 
-### User Stories
-
-```
-As a client 
-So that I can keep track of my money
-I would like to be able to have a bank account 
-
-As a client 
-So that I can add money to my account
-I would like to be able to make a deposit
-
-As a client
-So that I can take money out of my account 
-I would like to be able to make a withdrawal
-
-As a client
-So that I can see a history of my account transactions
-I would like to be able to print out a bank statement
-
-As a client 
-So that I can put my transactions into context
-I would like to see a date attached to every transaction
-```
