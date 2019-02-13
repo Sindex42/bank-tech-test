@@ -1,4 +1,5 @@
 # Bank tech test
+<a href="https://codeclimate.com/github/Sindex42/bank-tech-test/maintainability"><img src="https://api.codeclimate.com/v1/badges/7de4a61e8fe775e1f1de/maintainability" /></a>
 
 An example banking app written in Javascript during week 10 at Makers Academy. Interaction with the app is through the browser console.
 
