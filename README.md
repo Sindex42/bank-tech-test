@@ -23,6 +23,21 @@ An example banking app written in Javascript during week 10 at Makers Academy. I
 
 ![Imgur](https://i.imgur.com/ERrqLoU.png)
 
+## Approach
+
+1. Created some user stories from the specifications (see below).
+
+2. Rough diagramming to help define the structure.
+
+3. Initially decided to split up the task into 4 classes: Account, Transaction, TransactionHistory and Statement.
+
+4. Renamed the Statement class to TransactionHistory to better reflect its purpose. 
+
+5. Merged TransactionHistory with Statement temporarily to finish the statement printing
+
+6. (Pending) Extracted Statement class to separate responsibility
+
+
 ## User Stories
 
 ```
