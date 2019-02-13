@@ -4,7 +4,6 @@ describe('TransactionHistory', () => {
   let creditTransaction, debitTransaction, header, history, transaction
 
   beforeEach(() => {
-    header = 'date       || credit  || debit   || balance'
     history = new TransactionHistory()
   })
 
@@ -23,25 +22,26 @@ describe('TransactionHistory', () => {
 
   describe('#print', () => {
     it('prints a header', () => {
+      header = 'date       || credit  || debit   || balance'
       expect(history.print()).toContain(header)
     })
   })
 
   describe('#formatLine', () => {
-    it('prints the new account balance', () => {
-      transaction = { amount: 500, newBalance: 700 }
-      expect(history.formatLine(transaction)).toContain('700.00')
+    it('formats a transaction', () => {
+      transaction = { date: "11/02/2019", amount: 500, newBalance: 1000 }
+      expect(history.formatLine(transaction)).toContain('11/02/2019 || 500.00 ||        || 1000.00')
     })
   })
 
   describe('#determineType', () => {
-    it('prints the credit amount', () => {
-      creditTransaction = { amount: 500, newBalance: 1000 }
+    it('prints the amount under the credit column', () => {
+      creditTransaction = { amount: 500 }
       expect(history.determineAmountType(creditTransaction)).toContain('500.00 ||        ')
     })
 
-    it('prints the debit amount', () => {
-      debitTransaction = { amount: -500, newBalance: 1000 }
+    it('prints the amount under the debit column', () => {
+      debitTransaction = { amount: -500 }
       expect(history.determineAmountType(debitTransaction)).toContain('        || 500.00')
     })
   })
