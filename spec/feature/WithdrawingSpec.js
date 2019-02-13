@@ -1,7 +1,7 @@
 'use strict'
 
 describe('Withdrawing', () => {
-  let account, Account
+  let account
 
   beforeEach(() => {
     account = new Account()

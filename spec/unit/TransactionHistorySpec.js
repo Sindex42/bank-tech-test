@@ -1,7 +1,7 @@
 'use strict'
 
 describe('TransactionHistory', () => {
-  let history, header, TransactionHistory
+  let history, header
 
   beforeEach(() => {
     header = 'date       || credit  || debit   || balance'

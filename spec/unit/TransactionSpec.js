@@ -1,7 +1,7 @@
 'use strict'
 
 describe('Transaction', () => {
-  let transaction, Transaction
+  let transaction
 
   beforeEach(() => {
     transaction = new Transaction(500.00, 600.00, new Date(2019, 1, 11))

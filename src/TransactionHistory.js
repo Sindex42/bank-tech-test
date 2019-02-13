@@ -6,7 +6,7 @@ class TransactionHistory {
   }
 
   addTransaction (amount, newBalance) {
-    let transaction, Transaction
+    let transaction
 
     transaction = new Transaction(amount, newBalance)
     this.transactions.push(transaction)

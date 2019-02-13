@@ -1,7 +1,7 @@
 'use strict'
 
 describe('Account', () => {
-  let account, Account
+  let account
 
   beforeEach(() => {
     account = new Account()
