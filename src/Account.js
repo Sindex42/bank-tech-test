@@ -1,4 +1,5 @@
 'use strict'
+let TransactionHistory
 
 class Account {
   constructor (history = new TransactionHistory()) {

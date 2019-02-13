@@ -1,8 +1,7 @@
 'use strict'
-/* global it, expect, describe, beforeEach, TransactionHistory */
 
 describe('TransactionHistory', () => {
-  let history, header
+  let history, header, TransactionHistory
 
   beforeEach(() => {
     header = 'date       || credit  || debit   || balance'

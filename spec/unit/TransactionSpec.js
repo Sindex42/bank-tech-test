@@ -1,8 +1,7 @@
 'use strict'
-/* global it, expect, describe, beforeEach, Transaction */
 
 describe('Transaction', () => {
-  let transaction
+  let transaction, Transaction
 
   beforeEach(() => {
     transaction = new Transaction(500.00, 600.00, new Date(2019, 1, 11))
