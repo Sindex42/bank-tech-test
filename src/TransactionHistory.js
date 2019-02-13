@@ -12,23 +12,18 @@ class TransactionHistory {
     this.transactions.push(transaction)
   }
 
-  printStatement () {
-    let header, statement, transactionString
-
-    statement = ''
-    header = 'date       || credit  || debit   || balance\n'
-
-    statement += header
+  print () {
+    let statement = 'date       || credit  || debit   || balance\n'
 
     this.transactions.forEach((transaction) => {
-      transactionString = this.formatStatementLine(transaction)
+      let transactionString = this.format(transaction)
       statement += transactionString
     })
 
     return statement
   }
 
-  formatStatementLine (transaction) {
+  format (transaction) {
     let balanceDiff
     const amount = Math.abs(transaction.amount).toFixed(2)
 

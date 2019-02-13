@@ -1,7 +1,7 @@
 'use strict'
 
 describe('TransactionHistory', () => {
-  let credit, debit, history, header
+  let creditTransaction, debitTransaction, history, header
 
   beforeEach(() => {
     header = 'date       || credit  || debit   || balance'
@@ -23,26 +23,26 @@ describe('TransactionHistory', () => {
 
   describe('#printStatement', () => {
     it('prints a header', () => {
-      expect(history.printStatement()).toContain(header)
+      expect(history.print()).toContain(header)
     })
   })
 
   describe('#formatStatementLine', () => {
     beforeEach(() => {
-      credit = {date: "01/12/1916", amount: 500, newBalance: 1000}
-      debit = {date: "01/12/1916", amount: -500, newBalance: 1000}
+      creditTransaction = {amount: 500, newBalance: 1000}
+      debitTransaction = {amount: -500, newBalance: 1000}
     })
 
     it('prints the credit amount', () => {
-      expect(history.formatStatementLine(credit)).toContain('500.00 ||        ')
+      expect(history.format(creditTransaction)).toContain('500.00 ||        ')
     })
 
     it('prints the debit amount', () => {
-      expect(history.formatStatementLine(debit)).toContain('        || 500.00')
+      expect(history.format(debitTransaction)).toContain('        || 500.00')
     })
 
     it('prints the new account balance', () => {
-      expect(history.formatStatementLine(debit)).toContain('1000.00')
+      expect(history.format(debitTransaction)).toContain('1000.00')
     })
   })
 })

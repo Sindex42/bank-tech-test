@@ -19,6 +19,6 @@ class Account {
   }
 
   printStatement () {
-    return this.history.printStatement()
+    return this.history.print()
   }
 }
