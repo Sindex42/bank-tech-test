@@ -22,21 +22,22 @@ An example banking app written in Javascript during week 10 at Makers Academy. I
   `ctrl + shift + J` (windows) or 
  `cmd + option + J` (mac)
 
-![Imgur](https://i.imgur.com/ERrqLoU.png)
+![Imgur](https://i.imgur.com/SPRuhRU.png)
 
 ## Approach
 
 1. Created some user stories from the specifications (see below).
-
 2. Rough diagramming to help define the structure.
-
 3. Initially decided to split up the task into 4 classes: Account, Transaction, TransactionHistory and Statement.
-
 4. Renamed the Statement class to TransactionHistory to better reflect its purpose. 
+5. Merged TransactionHistory with Statement to finish the statement printing
+6. Refactored printStatement function into multiple methods to adhere to SRP
 
-5. Merged TransactionHistory with Statement temporarily to finish the statement printing
+## Reflections
 
-6. (Pending) Extracted Statement class to separate responsibility
+- TransactionHistory is still responsible for printing the statement. This should be extracted into its own class 
+- Need to implement Date injection into transactionHistory or Statement to be able to control the date in the integration tests. This could be done by injecting a mocked class that would receive 'new' and return a user defined object
+- Could store the statement header in its own file and import it a a constant
 
 
 ## User Stories
