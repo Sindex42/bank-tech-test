@@ -9,7 +9,7 @@ class TransactionHistory {
     let transaction
 
     transaction = new Transaction(amount, newBalance)
-    this.transactions.push(transaction)
+    this.transactions.unshift(transaction)
   }
 
   print () {
@@ -31,6 +31,6 @@ class TransactionHistory {
     const amount = Math.abs(transaction.amount).toFixed(2)
 
     if (transaction.amount >= 0) { return `${amount} ||        ` }
-    return `        || ${amount}`
+    return `        || ${amount} `
   }
 }
